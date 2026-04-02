@@ -9,7 +9,7 @@ describe("calculateE1RM", () => {
 
   it("beats a higher weight at RPE 10", () => {
     const lowerRPE = calculateE1RM(80, 10, 7); // 114.67
-    const higherRPE = calculateE1RM(82.5, 10, 10); // 82.5 × (1 + 10/30) = 109.99
+    const higherRPE = calculateE1RM(82.5, 10, 10); // 82.5 × (1 + 10/30) = 110
     expect(lowerRPE).toBeGreaterThan(higherRPE);
   });
 
