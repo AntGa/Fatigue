@@ -45,6 +45,36 @@ jobs:
 
       - run: pnpm format:check
 
+  test:
+    name: Vitest
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm --filter @fatigue/api test:coverage
+
+      - uses: davelosert/vitest-coverage-report-action@v2
+        if: always()
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          comment-on: pr
+          json-summary-path: api/coverage/coverage-summary.json
+          json-path: api/coverage/coverage-final.json
+
   typecheck:
     name: TypeScript
     runs-on: ubuntu-latest
