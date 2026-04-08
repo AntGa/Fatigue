@@ -1,0 +1,24 @@
+/* Default light theme — token values use Tailwind's color variables */
+@layer base {
+  :root {
+    --background: var(--color-white);
+    --foreground: var(--color-zinc-950);
+
+    --primary: var(--color-indigo-500);
+    --primary-foreground: var(--color-white);
+
+    --secondary: var(--color-zinc-100);
+    --secondary-foreground: var(--color-zinc-900);
+
+    --muted: var(--color-zinc-100);
+    --muted-foreground: var(--color-zinc-500);
+
+    --card: var(--color-white);
+    --card-foreground: var(--color-zinc-950);
+
+    --border: var(--color-zinc-200);
+
+    --destructive: var(--color-red-500);
+    --destructive-foreground: var(--color-white);
+  }
+}
