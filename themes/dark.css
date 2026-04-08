@@ -1,0 +1,26 @@
+/* Default dark theme — applied when system color scheme is dark */
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: var(--color-zinc-950);
+      --foreground: var(--color-zinc-50);
+
+      --primary: var(--color-indigo-400);
+      --primary-foreground: var(--color-zinc-950);
+
+      --secondary: var(--color-zinc-800);
+      --secondary-foreground: var(--color-zinc-50);
+
+      --muted: var(--color-zinc-800);
+      --muted-foreground: var(--color-zinc-400);
+
+      --card: var(--color-zinc-900);
+      --card-foreground: var(--color-zinc-50);
+
+      --border: var(--color-zinc-700);
+
+      --destructive: var(--color-red-400);
+      --destructive-foreground: var(--color-zinc-950);
+    }
+  }
+}
