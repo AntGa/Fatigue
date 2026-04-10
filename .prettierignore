@@ -1,3 +1,4 @@
 node_modules/
 .expo/
 pnpm-lock.yaml
+api/drizzle/
