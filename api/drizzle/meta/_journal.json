@@ -15,6 +15,13 @@
       "when": 1775817530447,
       "tag": "0001_skinny_vulture",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1775818725042,
+      "tag": "0002_chilly_warpath",
+      "breakpoints": true
     }
   ]
 }
