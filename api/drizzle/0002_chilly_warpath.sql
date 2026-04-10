@@ -1,0 +1,1 @@
+ALTER TABLE "exercise_muscles" ADD CONSTRAINT "coefficient_range" CHECK ("exercise_muscles"."coefficient" > 0 AND "exercise_muscles"."coefficient" <= 1);
