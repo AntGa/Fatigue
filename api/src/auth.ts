@@ -3,6 +3,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { expo } from "@better-auth/expo";
 import { db } from "./db/db.js";
 import * as schema from "./db/schema/index.js";
+import { seedUserMuscleConfig } from "./db/seeds/seedUserMuscleConfig.js";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -19,4 +20,13 @@ export const auth = betterAuth({
       : []),
   ],
   plugins: [expo()],
+  databaseHooks: {
+    user: {
+      create: {
+        after: async (user) => {
+          await seedUserMuscleConfig(user.id);
+        },
+      },
+    },
+  },
 });
